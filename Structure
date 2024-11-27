@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# Set base directories
+ROOT_DIR=$(pwd)
+FRONTEND_DIR="$ROOT_DIR/frontend"
+SUPABASE_DIR="$ROOT_DIR/supabase"
+
+# Function to create directory if it doesn't exist
+create_dir() {
+    if [ ! -d "$1" ]; then
+        mkdir -p "$1"
+        echo "Created directory: $1"
+    fi
+}
+
+# Function to create file if it doesn't exist
+create_file() {
+    if [ ! -f "$1" ]; then
+        touch "$1"
+        echo "$2" > "$1"
+        echo "Created file: $1"
+    fi
+}
+
+# Remove unnecessary files and directories
+echo "Removing unnecessary files and directories..."
+rm -rf "$ROOT_DIR/backend"
+echo "Removed: $ROOT_DIR/backend"
+
+# Create frontend structure
+echo "Setting up frontend structure..."
+create_dir "$FRONTEND_DIR/public"
+create_dir "$FRONTEND_DIR/src"
+create_dir "$FRONTEND_DIR/src/components"
+create_dir "$FRONTEND_DIR/src/pages"
+create_dir "$FRONTEND_DIR/src/services"
+create_dir "$FRONTEND_DIR/src/styles"
+
+create_file "$FRONTEND_DIR/package.json" "// Add frontend dependencies here"
+create_file "$FRONTEND_DIR/src/App.js" "// Main application file"
+create_file "$FRONTEND_DIR/src/index.js" "// Entry point"
+
+# Create supabase structure
+echo "Setting up Supabase structure..."
+create_dir "$SUPABASE_DIR/migrations"
+create_dir "$SUPABASE_DIR/functions"
+
+create_file "$SUPABASE_DIR/.env" "# Supabase environment variables"
+create_file "$SUPABASE_DIR/schema.sql" "-- Define your database schema here"
+
+# Update README.md
+create_file "$ROOT_DIR/README.md" "# Joseph_Njoroge Portfolio Project\n\nProject documentation goes here."
+
+echo "Project structure updated successfully!"
