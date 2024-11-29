@@ -3,7 +3,8 @@
 # Set base directories
 ROOT_DIR=$(pwd)
 FRONTEND_DIR="$ROOT_DIR/frontend"
-SUPABASE_DIR="$ROOT_DIR/supabase"
+BACKEND_DIR="$ROOT_DIR/backend"
+DATABASE_DIR="$ROOT_DIR/database"
 
 # Function to create directory if it doesn't exist
 create_dir() {
@@ -24,8 +25,8 @@ create_file() {
 
 # Remove unnecessary files and directories
 echo "Removing unnecessary files and directories..."
-rm -rf "$ROOT_DIR/backend"
-echo "Removed: $ROOT_DIR/backend"
+rm -rf "$ROOT_DIR/supabase"
+echo "Removed: $ROOT_DIR/supabase"
 
 # Create frontend structure
 echo "Setting up frontend structure..."
@@ -36,19 +37,29 @@ create_dir "$FRONTEND_DIR/src/pages"
 create_dir "$FRONTEND_DIR/src/services"
 create_dir "$FRONTEND_DIR/src/styles"
 
-create_file "$FRONTEND_DIR/package.json" "// Add frontend dependencies here"
-create_file "$FRONTEND_DIR/src/App.js" "// Main application file"
-create_file "$FRONTEND_DIR/src/index.js" "// Entry point"
+create_file "$FRONTEND_DIR/package.json" "{\"name\": \"frontend\", \"version\": \"1.0.0\", \"dependencies\": {}}"
+create_file "$FRONTEND_DIR/src/App.js" "import React from 'react';\n\nfunction App() {\n    return (<div>Welcome to Joseph's Portfolio</div>);\n}\n\nexport default App;"
+create_file "$FRONTEND_DIR/src/index.js" "import React from 'react';\nimport ReactDOM from 'react-dom';\nimport App from './App';\n\nReactDOM.render(<App />, document.getElementById('root'));"
 
-# Create supabase structure
-echo "Setting up Supabase structure..."
-create_dir "$SUPABASE_DIR/migrations"
-create_dir "$SUPABASE_DIR/functions"
+# Create backend structure
+echo "Setting up backend structure..."
+create_dir "$BACKEND_DIR/src"
+create_dir "$BACKEND_DIR/src/routes"
+create_dir "$BACKEND_DIR/src/controllers"
+create_dir "$BACKEND_DIR/src/models"
 
-create_file "$SUPABASE_DIR/.env" "# Supabase environment variables"
-create_file "$SUPABASE_DIR/schema.sql" "-- Define your database schema here"
+create_file "$BACKEND_DIR/package.json" "{\"name\": \"backend\", \"version\": \"1.0.0\", \"dependencies\": {}}"
+create_file "$BACKEND_DIR/src/index.js" "const express = require('express');\nconst app = express();\nconst PORT = process.env.PORT || 5000;\n\napp.use(express.json());\n\napp.get('/', (req, res) => {\n    res.send('Welcome to the Backend');\n});\n\napp.listen(PORT, () => {\n    console.log(`Server is running on port ${PORT}`);\n});"
+
+# Create database structure
+echo "Setting up database structure..."
+create_dir "$DATABASE_DIR/migrations"
+create_dir "$DATABASE_DIR/functions"
+
+create_file "$DATABASE_DIR/.env" "# Database environment variables"
+create_file "$DATABASE_DIR/schema.sql" "-- Define your database schema here"
 
 # Update README.md
-create_file "$ROOT_DIR/README.md" "# Joseph_Njoroge Portfolio Project\n\nProject documentation goes here."
+create_file "$ROOT_DIR/README.md" "# Joseph_Njoroge Portfolio Project\n\n## Project Structure\n\n### Frontend\n- Located in the \"frontend\" directory.\n- Built with React.js.\n\n### Backend\n- Located in the \"backend\" directory.\n- Powered by Node.js and Express.js.\n\n### Database\n- Located in the \"database\" directory.\n- Contains migrations, functions, and schema.\n\n## Setup Instructions\n1. Navigate to each directory and run \"npm install\" where applicable.\n2. Use the schema.sql file to set up your database.\n3. Start the backend and frontend servers for development."
 
 echo "Project structure updated successfully!"
