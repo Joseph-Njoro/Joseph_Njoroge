@@ -1,0 +1,81 @@
+.about-me {
+  padding: 2rem;
+  font-family: 'Arial', sans-serif;
+}
+
+.timeline {
+  margin-bottom: 2rem;
+}
+
+.timeline h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #333;
+}
+
+.timeline-items {
+  position: relative;
+  padding-left: 20px;
+}
+
+.timeline-item {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.timeline-year {
+  position: absolute;
+  left: -30px;
+  top: 0;
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.timeline-content {
+  margin-left: 40px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.timeline-content h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.skills {
+  text-align: center;
+}
+
+.skills h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #333;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.skill-item {
+  background-color: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+
+.skill-item:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}
