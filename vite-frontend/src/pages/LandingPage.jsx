@@ -7,12 +7,12 @@ import "../styles/LandingPage.css"; // Import custom styles
 // Typing effect component
 const TypingEffect = () => {
   const typingRef = useRef(null);
-  const [typingClass, setTypingClass] = useState('typewriter-twist'); // Default class for typewriter effect
+  const [typingClass, setTypingClass] = useState("typewriter-twist"); // Default class for typewriter effect
 
   useEffect(() => {
     // Simulate the switch between effects if needed
     const timeout = setTimeout(() => {
-      setTypingClass('pulse-effect'); // Change to pulse effect after initial typewriter
+      setTypingClass("pulse-effect"); // Change to pulse effect after initial typewriter
     }, 4000); // Change after 4 seconds
 
     return () => clearTimeout(timeout);
@@ -43,7 +43,7 @@ const LandingPage = () => {
             Download Resume
           </a>
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/Joseph-Njoro"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-secondary"
@@ -51,7 +51,7 @@ const LandingPage = () => {
             View GitHub
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://linkedin.com/in/joseph-njoroge-/"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-secondary"
@@ -76,7 +76,9 @@ const LandingPage = () => {
       <section className="skills-section" data-aos="fade-up">
         <h2 className="section-title">My Skills</h2>
         <div className="skills-grid">
-          {["HTML", "CSS", "JavaScript", "React", "Node.js", "Python", "Java", "C++", "TypeScript", "MongoDB", "SQL", "Git", "Docker", "Kubernetes", "GraphQL", "REST APIs"].map((skill, index) => (
+          {[
+            "HTML", "CSS", "JavaScript", "React", "Node.js", "Python", "Java", "C++", "TypeScript", "MongoDB", "SQL", "Git", "Docker", "Kubernetes", "GraphQL", "REST APIs"
+          ].map((skill, index) => (
             <motion.div
               key={index}
               className="skill-card"
@@ -97,7 +99,23 @@ const LandingPage = () => {
       <section className="projects-gallery" data-aos="fade-up">
         <h2 className="section-title">My Projects</h2>
         <div className="projects-grid">
-          {["Project 1", "Project 2", "Project 3"].map((project, index) => (
+          {[
+            {
+              name: "Portfolio Website",
+              link: "https://github.com/Joseph-Njoro/Joseph_Njoroge",
+              image: "/Images/Project1_screenshot.png"
+            },
+            {
+              name: "100DaysOfCode Challenge",
+              link: "https://github.com/Joseph-Njoro/100daysofALXSE",
+              image: "/Images/Project2_screenshot.png"
+            },
+            {
+              name: "Kubiu Outfitters",
+              link: "https://github.com/Joseph-Njoro/kubiu_Outfitters",
+              image: "/Images/Project3_screenshot.png"
+            }
+          ].map((project, index) => (
             <motion.div
               key={index}
               className="project-card"
@@ -105,13 +123,13 @@ const LandingPage = () => {
               whileTap={{ scale: 0.95 }}
             >
               <img
-                src={`path/to/project${index + 1}.jpg`}
-                alt={`${project} screenshot`}
+                src={project.image}
+                alt={`${project.name} screenshot`}
                 className="project-image"
               />
               <div className="project-overlay">
-                <h3 className="project-title">{project}</h3>
-                <a href={`https://github.com/yourusername/${project}`} className="view-project-btn">
+                <h3 className="project-title">{project.name}</h3>
+                <a href={project.link} className="view-project-btn" target="_blank" rel="noopener noreferrer">
                   View Project
                 </a>
               </div>
