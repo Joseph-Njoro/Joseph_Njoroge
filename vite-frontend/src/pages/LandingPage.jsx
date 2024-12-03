@@ -36,29 +36,37 @@ const LandingPage = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        <h1 className="hero-title">Joseph Njoroge</h1>
-        <TypingEffect />
-        <div className="hero-buttons">
-          <a href="/api/resume" className="btn btn-primary" download>
-            Download Resume
-          </a>
-          <a
-            href="https://github.com/Joseph-Njoro"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-secondary"
-          >
-            View GitHub
-          </a>
-          <a
-            href="https://linkedin.com/in/joseph-njoroge-/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-secondary"
-          >
-            Visit LinkedIn
-          </a>
+        <div className="hero-content">
+          <h1 className="hero-title">Joseph Njoroge</h1>
+          <TypingEffect />
+          <div className="hero-buttons">
+            <a href="/api/resume" className="btn btn-primary" download>
+              Download Resume
+            </a>
+            <a
+              href="https://github.com/Joseph-Njoro"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-secondary"
+            >
+              View GitHub
+            </a>
+            <a
+              href="https://linkedin.com/in/joseph-njoroge-/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-secondary"
+            >
+              Visit LinkedIn
+            </a>
+          </div>
         </div>
+        {/* Adding my picture here */}
+        <img
+          src="/Images/Joseph.jpeg"
+          alt="Joseph Njoroge"
+          className="hero-image"
+        />
       </motion.div>
 
       {/* About Me Section */}
