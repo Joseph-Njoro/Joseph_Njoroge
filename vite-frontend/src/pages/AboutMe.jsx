@@ -14,8 +14,15 @@ const AboutMe = () => {
           and continuously expanding my technical skills. My goal is to build meaningful applications that make a real impact.
         </p>
         <div className="cta-buttons">
-          <button className="btn primary">Contact Me</button>
-          <button className="btn secondary">View My Work</button>
+          <a href="#contact" className="btn primary">Contact Me</a>
+          <a
+            href="https://github.com/Joseph-Njoro/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn secondary"
+          >
+            View My Work
+          </a>
         </div>
       </section>
 
@@ -24,24 +31,24 @@ const AboutMe = () => {
         <h2>My Journey</h2>
         <div className="timeline-items">
           <div className="timeline-item">
-            <div className="timeline-year">2020</div>
+            <div className="timeline-year">2021</div>
             <div className="timeline-content">
               <h3>Started My Tech Journey</h3>
               <p>Explored programming concepts and built small projects, sparking my love for coding.</p>
             </div>
           </div>
           <div className="timeline-item">
-            <div className="timeline-year">2021</div>
+            <div className="timeline-year">2022</div>
             <div className="timeline-content">
-              <h3>Joined ALX Holberton</h3>
-              <p>Enrolled in a comprehensive software engineering program to enhance my coding skills.</p>
+              <h3>Enrolled for a Bachelor’s Degree</h3>
+              <p>Began my studies in Project Planning and Management at Karatina University.</p>
             </div>
           </div>
           <div className="timeline-item">
             <div className="timeline-year">2022</div>
             <div className="timeline-content">
-              <h3>Completed My First Major Project</h3>
-              <p>Developed a full-stack web application for a local client using React, Node.js, and MongoDB.</p>
+              <h3>Joined ALX Holberton</h3>
+              <p>Enrolled in a comprehensive software engineering program to enhance my coding skills.</p>
             </div>
           </div>
           <div className="timeline-item">
@@ -54,8 +61,22 @@ const AboutMe = () => {
           <div className="timeline-item">
             <div className="timeline-year">2024</div>
             <div className="timeline-content">
+              <h3>Completed My First Major Project</h3>
+              <p>Developed a full-stack web application for a local client using React, Django, and PostgreSQL.</p>
+            </div>
+          </div>
+          <div className="timeline-item">
+            <div className="timeline-year">2024</div>
+            <div className="timeline-content">
               <h3>Portfolio and Personal Projects</h3>
               <p>Worked on creating a professional portfolio and contributed to open-source projects, showcasing my ability to collaborate and create scalable solutions.</p>
+            </div>
+          </div>
+          <div className="timeline-item">
+            <div className="timeline-year">2025</div>
+            <div className="timeline-content">
+              <h3>Sneak Preview</h3>
+              <p>Collaborating on a full-stack professional educational website that will teach computing topics like ethical hacking, Linux, and all sorts of tech stuff. Launch planned for August 2025.</p>
             </div>
           </div>
         </div>
@@ -109,10 +130,20 @@ const AboutMe = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="contact">
+      <section className="contact" id="contact">
         <h2>Contact Me</h2>
         <p>Feel free to reach out to me for project collaborations, job opportunities, or just a friendly tech chat!</p>
-        <a href="mailto:joseph@example.com" className="contact-link">joseph@example.com</a>
+        <a href="mailto:ramosnjoro@gmail.com" className="contact-link">ramosnjoro@gmail.com</a>
+        <ul className="social-links">
+          <li><a href="https://github.com/Joseph-Njoro/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/joseph-njoroge-/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        </ul>
+      </section>
+
+      {/* Placeholder for Contact Form */}
+      <section className="contact-form">
+        <h2>Contact Form (Coming Soon)</h2>
+        <p>Stay tuned for a dedicated contact form for quick and easy communication.</p>
       </section>
     </div>
   );
