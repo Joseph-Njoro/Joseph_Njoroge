@@ -1,67 +1,210 @@
+/* General reset */
+body, h1, h2, h3, p, a, div, section, img {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main container */
 .projects-page {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #f5f5f5;
   padding: 20px;
 }
 
-.page-title {
+/* Introduction Section */
+.projects-intro {
   text-align: center;
+  margin-bottom: 40px;
+}
+
+.projects-intro .intro-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.projects-intro .intro-description {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* Projects Section */
+.projects-section {
+  margin-bottom: 40px;
+}
+
+.projects-section h2 {
+  text-align: center;
+  font-size: 2rem;
   margin-bottom: 20px;
 }
 
 .projects-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
+  justify-content: center;
 }
 
 .project-card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  width: 300px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-.project-image {
+.project-card img {
   width: 100%;
-  height: auto;
+  height: 200px;
+  object-fit: cover;
 }
 
-.project-info {
+.project-card .project-details {
   padding: 15px;
 }
 
-.project-title {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+.project-card .project-title {
+  font-size: 1.5rem;
+  color: #222;
 }
 
-.project-description {
-  margin-bottom: 10px;
+.project-card .project-description {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #777;
+}
+
+.project-card .project-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.project-btn {
+  text-decoration: none;
+  background-color: #007BFF;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.project-btn:hover {
+  background-color: #0056b3;
+}
+
+.project-card.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Tech Highlights */
+.tech-highlights {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.tech-badge {
+  display: inline-block;
+  margin: 5px;
+  padding: 5px 15px;
+  border-radius: 20px;
+  background-color: #ddd;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+/* Timeline Section */
+.timeline-container {
+  position: relative;
+  margin: 40px 0;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.timeline-dot {
+  width: 15px;
+  height: 15px;
+  background-color: #007BFF;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.timeline-content {
+  flex: 1;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Testimonials */
+.testimonials-container {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.testimonial {
+  background-color: #fff;
+  border-left: 4px solid #007BFF;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px auto;
+  display: inline-block;
+  width: 80%;
+}
+
+.testimonial footer {
+  text-align: right;
+  font-size: 0.9rem;
   color: #555;
 }
 
-.project-buttons {
-  display: flex;
-  gap: 10px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 8px 12px;
-  text-decoration: none;
-  border-radius: 5px;
+/* Contact CTA */
+.contact-cta-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #007BFF;
   color: #fff;
+  border-radius: 10px;
 }
 
-.btn-github {
-  background-color: #333;
+.cta-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #007BFF;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
 }
 
-.btn-demo {
-  background-color: #28a745;
+.cta-btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .projects-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial {
+    width: 100%;
+  }
 }
