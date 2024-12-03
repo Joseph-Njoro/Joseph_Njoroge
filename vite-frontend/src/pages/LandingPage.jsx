@@ -38,7 +38,22 @@ const LandingPage = () => {
       >
         <div className="hero-content">
           <h1 className="hero-title">Joseph Njoroge</h1>
+          {/* New profile image */}
+          <div className="profile-container">
+            <img
+              src="/Images/Joseph.jpeg" // The new picture
+              alt="Joseph Njoroge"
+              className="profile-image"
+            />
+          </div>
+          {/* Updated Typing Effect */}
           <TypingEffect />
+          <p className="about-text">
+            Hi, I'm Joseph Njoroge, a passionate software engineer with a keen interest in
+            creating innovative solutions. I love coding and enjoy tackling challenging problems to
+            build scalable and efficient systems. My expertise spans across frontend and backend
+            technologies, and I always strive to enhance my skills and stay ahead in the tech world.
+          </p>
           <div className="hero-buttons">
             <a href="/api/resume" className="btn btn-primary" download>
               Download Resume
@@ -61,24 +76,7 @@ const LandingPage = () => {
             </a>
           </div>
         </div>
-        {/* Adding my picture here */}
-        <img
-          src="/Images/Joseph.jpeg"
-          alt="Joseph Njoroge"
-          className="hero-image"
-        />
       </motion.div>
-
-      {/* About Me Section */}
-      <section className="about-me" data-aos="fade-up">
-        <h2 className="section-title">About Me</h2>
-        <p className="about-text">
-          Hi, I'm Joseph Njoroge, a passionate software engineer with a keen interest in
-          creating innovative solutions. I love coding and enjoy tackling challenging problems to
-          build scalable and efficient systems. My expertise spans across frontend and backend
-          technologies, and I always strive to enhance my skills and stay ahead in the tech world.
-        </p>
-      </section>
 
       {/* Skills Section */}
       <section className="skills-section" data-aos="fade-up">

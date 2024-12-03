@@ -1,4 +1,7 @@
 /* src/styles/LandingPage.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+
 .landing-page {
   font-family: 'Arial', sans-serif;
   background-color: #f5f5f5;
@@ -23,13 +26,34 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Adds depth */
 }
 
+/* Background image styling */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/Images/Joseph.jpeg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.4; /* Lower opacity to let content stand out */
+  z-index: 1; /* Places image behind content */
+  border-radius: 12px; /* Match the border radius */
+}
+
+/* Hero content */
 .hero-content {
-  z-index: 2; /* Ensures content appears above the image */
+  z-index: 2;
   position: relative;
   text-align: center;
   padding: 20px;
+  max-width: 800px; /* Optional: sets a max width for the content */
+  margin: 0 auto; /* Center-aligns the content */
 }
 
+/* Hero title */
 .hero-title {
   font-size: 4rem; /* Larger font size for emphasis */
   font-weight: bold;
@@ -49,16 +73,67 @@
   }
 }
 
-.hero-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures the image covers the entire hero section */
-  opacity: 0.4; /* Lower opacity to let content stand out */
-  z-index: 1; /* Places image behind content */
-  border-radius: 12px; /* Match the border radius */
+/* Profile Image */
+.profile-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.profile-image {
+  border-radius: 50%; /* Makes the image circular */
+  border: 5px solid #2C2C54; /* Attractive border color */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds depth */
+  width: 250px; /* Adjust size as needed */
+  height: 250px; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensures the image fits perfectly */
+}
+
+/* Styling for the "Code-driven creativity" text */
+.typewriter-twist,
+.pulse-effect {
+  display: inline-block;
+  font-size: 1.6rem;
+  margin-top: 20px;
+  color: #2C2C54;
+  font-weight: 100;
+  text-shadow: 0 0 5px #2C2C54, 0 0 10px #2C2C54; /* Subtle glow */
+}
+
+/* Enhanced download links */
+.hero-buttons .btn {
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  border-radius: 8px; /* Rounded corners */
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-primary {
+  background-color: #2C2C54;
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #1d1d3c; /* Darker shade for hover */
+  transform: translateY(-3px); /* Subtle lift effect */
+}
+
+.btn-secondary {
+  background-color: #3D3D70;
+  color: white;
+  border: none;
+  margin-left: 10px;
+}
+
+.btn-secondary:hover {
+  background-color: #2C2C54; /* Highlight color */
+  transform: translateY(-3px);
+}
+
+/* Additional styles for smooth transitions */
+.hero-buttons .btn:hover {
+  cursor: pointer;
 }
 
 /* Add a new class for the pulse effect */
@@ -121,16 +196,50 @@
 /* About Me Section */
 .about-me {
   padding: 40px 20px;
-  background-color: #fff;
+  background-color: #1c1c3c; /* Darker background for a modern look */
   margin-bottom: 50px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 12px; /* More rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Deeper shadow for a modern depth */
   text-align: center;
+  color: #f0f0f0; /* Light text color for contrast */
 }
 
+/* Title Styling */
+.about-me h2 {
+  font-size: 2.5rem; /* Larger and more modern title */
+  color: #00bfae; /* Teal color for a tech vibe */
+  margin-bottom: 20px;
+  font-family: 'Roboto Slab', serif; /* Modern, tech-inspired font */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+}
+
+/* Text Styling */
 .about-text {
-  font-size: 1.2rem;
-  line-height: 1.6;
+  color: #277999; /* Soft light blue for better readability and contrast */
+  font-style: italic;
+  font-family: 'Playfair Display', serif; /* Elegant, modern font */
+  font-size: 1.4rem; /* Slightly larger for better readability */
+  line-height: 1.5; /* Improved line spacing */
+  margin-top: 15px; /* Spacing from the title */
+  background: linear-gradient(to bottom, #00bfae, #1c1c3c); /* Gradient text */
+  -webkit-background-clip: text; /* Clipping for gradient effect */
+  color: transparent; /* Makes the background clip visible */
+  transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+/* Hover effect for the about text */
+.about-text:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Optional responsive tweaks */
+@media (max-width: 768px) {
+  .about-me {
+    padding: 30px 15px; /* Adjust padding for smaller screens */
+  }
+  .about-text {
+    font-size: 1.2rem; /* Slightly smaller font size */
+  }
 }
 
 /* Skills Section */
