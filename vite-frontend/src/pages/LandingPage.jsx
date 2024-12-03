@@ -142,6 +142,10 @@ const LandingPage = () => {
             </motion.div>
           ))}
         </div>
+        {/* "More Projects" button */}
+        <div className="more-projects-btn">
+          <a href="/projects" className="btn btn-more-projects">More Projects</a>
+        </div>
       </section>
 
       {/* Blog Preview Section */}
@@ -155,6 +159,10 @@ const LandingPage = () => {
               <a href="/blog" className="read-more-btn">Read More</a>
             </div>
           ))}
+        </div>
+        {/* "More Blogs" button */}
+        <div className="more-blogs-btn">
+          <a href="/blogs" className="btn btn-more-blogs">More Blogs</a>
         </div>
       </section>
     </div>
