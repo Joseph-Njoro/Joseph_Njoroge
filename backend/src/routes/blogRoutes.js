@@ -1,7 +1,8 @@
-const express = require('express');
+import express from 'express'; // Use ES module import
+import { getBlogs } from '../controllers/blogController.js'; // Use named imports for controllers
+
 const router = express.Router();
-const blogController = require('../controllers/blogController');
 
-router.get('/', blogController.getBlogs);
+router.get('/', getBlogs);
 
-module.exports = router;
+export default router; // Use export default instead of module.exports

@@ -1,7 +1,8 @@
-const express = require('express');
+import express from 'express'; // Use ES module import
+import { getProjects } from '../controllers/projectController.js'; // Use named imports for controllers
+
 const router = express.Router();
-const projectController = require('../controllers/projectController');
 
-router.get('/', projectController.getProjects);
+router.get('/', getProjects);
 
-module.exports = router;
+export default router; // Use export default instead of module.exports

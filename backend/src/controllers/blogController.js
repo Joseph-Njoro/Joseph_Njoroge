@@ -1,6 +1,6 @@
-const Blog = require('../models/Blog');
+import Blog from '../models/Blog.js'; // Import using ES modules
 
-exports.getBlogs = async (req, res) => {
+export const getBlogs = async (req, res) => {
   try {
     const blogs = await Blog.find();
     res.status(200).json(blogs);

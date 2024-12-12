@@ -1,7 +1,8 @@
-const express = require('express');
+import express from 'express'; // Use ES module import
+import { submitContactForm } from '../controllers/contactController.js'; // Use named imports for controllers
+
 const router = express.Router();
-const contactController = require('../controllers/contactController');
 
-router.post('/', contactController.submitContactForm);
+router.post('/', submitContactForm);
 
-module.exports = router;
+export default router; // Use export default instead of module.exports

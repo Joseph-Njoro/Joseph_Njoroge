@@ -1,6 +1,6 @@
-const Project = require('../models/Project');
+import Project from '../models/Project.js'; // Import using ES modules
 
-exports.getProjects = async (req, res) => {
+export const getProjects = async (req, res) => {
   try {
     const projects = await Project.find();
     res.status(200).json(projects);

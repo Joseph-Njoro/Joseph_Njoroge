@@ -1,15 +1,18 @@
-// Import required packages
-const express = require('express');
-const mongoose = require('mongoose');
-const dotenv = require('dotenv');
-const helmet = require('helmet');
-const cors = require('cors');
-const path = require('path');
+// index.js
+import express from 'express';
+import dotenv from 'dotenv';
+import helmet from 'helmet';
+import cors from 'cors';
+import path from 'path';
+
+// Import your custom modules
+import connectDB from './db.js'; // MongoDB connection function
+import buildAdminRouter from './admin/admin.js'; // AdminJS setup (with .js extension)
 
 // Import routes
-const projectRoutes = require('./routes/projectRoutes');
-const contactRoutes = require('./routes/contactRoutes');
-const blogRoutes = require('./routes/blogRoutes');
+import projectRoutes from './routes/projectRoutes.js';
+import contactRoutes from './routes/contactRoutes.js';
+import blogRoutes from './routes/blogRoutes.js';
 
 // Load environment variables
 dotenv.config();
@@ -22,6 +25,21 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
+// Helmet to allow inline scripts and styles (important for AdminJS)
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", "'unsafe-inline'"], // Allow inline scripts
+      styleSrc: ["'self'", "'unsafe-inline'"],  // Allow inline styles
+      // Allow additional resources needed by AdminJS
+      fontSrc: ["'self'", "https://fonts.googleapis.com", "https://fonts.gstatic.com"],
+      imgSrc: ["'self'", "data:"], // Allow images from data URIs
+      connectSrc: ["'self'", "ws://localhost:3000"], // Allow WebSocket connections (useful in development)
+    },
+  })
+);
+
 // Route setup
 app.use('/api/projects', projectRoutes);
 app.use('/api/contact', contactRoutes);
@@ -33,16 +51,14 @@ app.get('/api/resume', (req, res) => {
   res.download(filePath);
 });
 
+// AdminJS setup
+buildAdminRouter(app); // Adding AdminJS routes
+
 // Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => {
-  console.log('Connected to MongoDB');
-  // Start the server
-  app.listen(process.env.PORT || 5000, () => {
-    console.log(`Server is running on port ${process.env.PORT || 5000}`);
-  });
-})
-.catch(err => console.error('Error connecting to MongoDB:', err));
+connectDB(); // Call the function to connect to MongoDB
+
+// Start the server after MongoDB connection is successful
+app.listen(process.env.PORT || 5000, () => {
+  console.log(`Server is running on port ${process.env.PORT || 5000}`);
+  console.log(`AdminJS is available at http://localhost:${process.env.PORT || 5000}/admin`);
+});

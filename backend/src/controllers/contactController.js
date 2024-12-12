@@ -1,5 +1,5 @@
-const nodemailer = require('nodemailer');
-const Contact = require('../models/Contact');
+import nodemailer from 'nodemailer'; // Use ES module import
+import Contact from '../models/Contact.js'; // Import Contact model with ES module syntax
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -9,7 +9,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-exports.submitContactForm = async (req, res) => {
+export const submitContactForm = async (req, res) => {
   const { name, email, message } = req.body;
 
   try {
