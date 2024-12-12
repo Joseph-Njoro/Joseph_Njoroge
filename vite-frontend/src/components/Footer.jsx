@@ -15,18 +15,18 @@ const Footer = () => {
         </div>
         <div className="footer-info">
           <p>&copy; {new Date().getFullYear()} Joseph Njoroge. All rights reserved.</p>
-          <p>Email: <a href="mailto:joseph@example.com" className="footer-email">joseph@example.com</a></p>
+          <p>Email: <a href="mailto:ramosnjoro@gmail.com" className="footer-email">ramosnjoro@gmail.com</a></p>
           <div className="social-icons">
-            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <a href="https://github.com/Joseph-Njoro/" target="_blank" rel="noopener noreferrer" className="social-icon">
               <FaGithub />
             </a>
-            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <a href="https://www.linkedin.com/in/joseph-njoroge-/" target="_blank" rel="noopener noreferrer" className="social-icon">
               <FaLinkedin />
             </a>
-            <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <a href="https://twitter.com/@ramosnjoro" target="_blank" rel="noopener noreferrer" className="social-icon">
               <FaTwitter />
             </a>
-            <a href="mailto:joseph@example.com" className="social-icon">
+            <a href="mailto:ramosnjoro@gmail.com" className="social-icon">
               <FaEnvelope />
             </a>
           </div>

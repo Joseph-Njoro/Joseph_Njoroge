@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../styles/ProjectsPage.css'; // Custom styles
+import '../styles/ProjectsPage.css';
 
 // ProjectCard component
 const ProjectCard = ({ project, reverse }) => (
@@ -79,9 +79,8 @@ const ProjectsPage = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    // Hardcoded project data for demonstration purposes
     const fetchProjects = async () => {
-      const data = [
+      setProjects([
         {
           id: 1,
           name: 'E-Commerce Platform',
@@ -112,8 +111,7 @@ const ProjectsPage = () => {
           technologies: ['Python', 'Flask'],
           timelineDescription: 'Developed for academic research in 2024.',
         },
-      ];
-      setProjects(data);
+      ]);
     };
 
     fetchProjects();
@@ -121,7 +119,6 @@ const ProjectsPage = () => {
 
   return (
     <div className="projects-page">
-      {/* Eye-Catching Introduction Section */}
       <header className="projects-intro">
         <h1 className="intro-title">Crafting Solutions, One Project at a Time</h1>
         <p className="intro-description">
@@ -129,39 +126,30 @@ const ProjectsPage = () => {
         </p>
       </header>
 
-      {/* Unified Projects Section */}
       <section className="projects-section">
         <h2>Projects</h2>
         <div className="projects-container">
           {projects.map((project, index) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              reverse={index % 2 !== 0} // Alternate the order: true for odd-indexed projects
-            />
+            <ProjectCard key={project.id} project={project} reverse={index % 2 !== 0} />
           ))}
         </div>
       </section>
 
-      {/* Highlight Technologies */}
       <section className="tech-highlights">
         <h2>Technologies I Use</h2>
         <TechHighlights projects={projects} />
       </section>
 
-      {/* Interactive Timeline */}
       <section className="projects-timeline">
         <h2>My Project Journey</h2>
         <ProjectTimeline projects={projects} />
       </section>
 
-      {/* Testimonials Section */}
       <section className="testimonials">
         <h2>What People Say</h2>
         <Testimonials />
       </section>
 
-      {/* Call-to-Actions (CTAs) */}
       <section className="contact-cta">
         <ContactCTA />
       </section>
