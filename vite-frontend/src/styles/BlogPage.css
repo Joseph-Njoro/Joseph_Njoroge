@@ -1,9 +1,9 @@
 /* Blog Page Styles */
-.blog-page ```css
-{
+.blog-page {
   padding: 20px;
   font-family: 'Roboto', sans-serif;
   color: #333;
+  background-color: #f4f4f4; /* Light background for better contrast */
 }
 
 .page-title {
@@ -72,6 +72,7 @@
 .blog-title {
   font-size: 1.5rem;
   margin-bottom: 10px;
+  font-weight: bold; /* Enhanced font weight for titles */
 }
 
 .blog-excerpt {
@@ -123,4 +124,21 @@
   color: red;
   text-align: center;
   margin-top: 20px;
+}
+
+/* Whitespace and Layout Enhancements */
+.blog-preview {
+  margin: 10px 0; /* Added margin for better spacing */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .blog-controls {
+    flex-direction: column; /* Stack controls on smaller screens */
+    align-items: center;
+  }
+
+  .search-bar {
+    width: 100%; /* Full width on smaller screens */
+  }
 }

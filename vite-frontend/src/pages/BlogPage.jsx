@@ -67,11 +67,13 @@ const BlogPage = () => {
           className="search-bar"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
+          aria-label="Search blogs"
         />
         <select
           className="category-filter"
           value={category}
           onChange={(e) => setCategory(e.target.value)}
+          aria-label="Filter by category"
         >
           <option value="All">All Categories</option>
           <option value="Tech">Tech</option>
@@ -104,6 +106,7 @@ const BlogPage = () => {
                   key={i + 1}
                   className={`pagination-btn ${currentPage === i + 1 ? 'active' : ''}`}
                   onClick={() => handlePageChange(i + 1)}
+                  aria-label={`Go to page ${i + 1}`}
                 >
                   {i + 1}
                 </button>
