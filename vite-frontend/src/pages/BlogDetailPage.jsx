@@ -14,7 +14,7 @@ const BlogDetailPage = () => {
     const fetchBlogDetail = async () => {
       try {
         console.log(`Fetching blog detail from: /api/blogs/${id}`); // Log the URL being fetched
-        const response = await fetch(`/api/blogs/${id}`);
+        const response = await fetch(`http://localhost:5000/api/blogs/${id}`);
         
         // Check if the response is ok
         if (!response.ok) {

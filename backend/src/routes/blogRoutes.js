@@ -1,8 +1,12 @@
-import express from 'express'; // Use ES module import
-import { getBlogs } from '../controllers/blogController.js'; // Use named imports for controllers
+import express from 'express';
+import { getBlogs, getBlogById } from '../controllers/blogController.js'; // Import the new function
 
 const router = express.Router();
 
+// Route to get all blogs
 router.get('/', getBlogs);
 
-export default router; // Use export default instead of module.exports
+// Route to get a blog by ID
+router.get('/:id', getBlogById); // Add this line
+
+export default router;

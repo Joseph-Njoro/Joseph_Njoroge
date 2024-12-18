@@ -8,7 +8,7 @@ const BlogPreview = ({ blog }) => {
       <p className="blog-excerpt">{blog.content.slice(0, 150)}...</p>
       <div className="blog-meta">
         <span className="blog-tags">Tags: {blog.tags.join(', ')}</span>
-        <Link to={`/blog/${blog.id}`} className="read-more-btn">Read More</Link>
+        <Link to={`/blog/${blog._id}`} className="read-more-btn">Read More</Link>
       </div>
     </div>
   );
