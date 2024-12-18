@@ -1,0 +1,31 @@
+/* src/styles/blogPost.css */
+.blog-post {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.blog-content {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.blog-content h1 {
+  font-size: 24px;
+  color: #2a2a2a;
+}
+
+.blog-content a {
+  color: #0066cc;
+  text-decoration: underline;
+}
+
+.blog-content a:hover {
+  color: #004080;
+}
+
+.blog-content img {
+  max-width: 100%;
+  height: auto;
+}
