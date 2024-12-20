@@ -74,52 +74,10 @@ Helmet.js: Security middleware for Express.js.
 
 Cors: Middleware for enabling Cross-Origin Resource Sharing.
 
-Installation
 
-Follow the steps below to set up the backend locally:
+## Available API Endpoints
 
-Clone the Repository:
-
-git clone <repository-url>
-cd <repository-name>
-
-Install Dependencies:
-
-npm install
-
-Set Up MongoDB:
-
-Create a MongoDB cluster using MongoDB Atlas or use a local MongoDB instance.
-
-Obtain the MongoDB URI.
-
-Environment Variables:
-
-Create a .env file in the root directory.
-
-Add the following environment variables:
-
-PORT=5000
-MONGODB_URI=<your-mongodb-uri>
-
-Start the Server:
-
-npm start
-
-The server will run on http://localhost:5000.
-
-Configuration
-
-.env File
-
-The backend uses environment variables for sensitive configurations. Ensure you have the following in your .env file:
-
-PORT=5000
-MONGODB_URI=<your-mongodb-connection-string>
-
-Available API Endpoints
-
-Projects API
+# Projects API
 
 Fetch All Projects
 
@@ -139,9 +97,9 @@ Response:
   }
 ]
 
-Blogs API
+## Blogs API
 
-Fetch All Blogs
+# Fetch All Blogs
 
 Endpoint: GET /api/blogs
 
@@ -175,7 +133,7 @@ Response:
   "createdAt": "2024-12-18T12:00:00.000Z"
 }
 
-Contact API
+## Contact API
 
 Submit Contact Form
 
@@ -198,9 +156,9 @@ Response:
   "message": "Contact form submitted successfully."
 }
 
-Resume Download API
+## Resume Download API
 
-Download Resume
+# Download Resume
 
 Endpoint: GET /api/resume
 
@@ -218,21 +176,11 @@ Error Response Format:
   "error": "Error message here."
 }
 
-Contributing
+### Contributing
 
 Contributions are welcome! Please follow these steps:
 
-Fork the repository.
-
-Create a new branch for your feature or bug fix.
-
-git checkout -b feature-name
-
-Commit your changes with clear messages.
-
-git commit -m "Add feature-name"
-
-Push your branch and open a pull request.
+Contact me <ramosnjoro@gmail.com>
 
 License
 
