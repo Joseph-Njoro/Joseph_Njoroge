@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import dynamic from 'next/dynamic'; // Dynamically import ReactQuill to avoid SSR (Server Side Rendering) issues
+import dynamic from 'next/dynamic'; // Dynamically import ReactQuill to avoid SSR issues
 import 'react-quill/dist/quill.snow.css'; // Import Quill's default Snow theme styles
 
 // Dynamically import ReactQuill so it doesn't break SSR

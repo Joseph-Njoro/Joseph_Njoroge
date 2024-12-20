@@ -1,6 +1,6 @@
 import AdminJS from 'adminjs';
 import { buildRouter } from '@adminjs/express';
-import { Database, Resource } from '@adminjs/mongoose'; // Import both Database and Resource from @adminjs/mongoose
+import { Database, Resource } from '@adminjs/mongoose';
 
 import Blog from '../models/Blog.js';
 import Contact from '../models/Contact.js';
@@ -21,7 +21,7 @@ const adminJs = new AdminJS({
             isVisible: { list: true, filter: true, show: true, edit: true },
             custom: {
               component: {
-                name: 'BlogEditor', // This is how AdminJS identifies the component
+                name: 'BlogEditor', // AdminJS will look for this component
                 width: '100%',
               },
             },
@@ -38,14 +38,14 @@ const adminJs = new AdminJS({
       options: { parent: { name: 'Project Management' } },
     },
   ],
-  rootPath: '/admin', // Set the root path for AdminJS
+  rootPath: '/admin',
   branding: {
     companyName: 'CODEFOLIO',
   },
   assets: {
-    // Provide the path to the frontend where BlogEditor is located (after building your frontend)
-    styles: ['/static/css/blogEditor.css'], // Update with the correct path to the CSS file
-    scripts: ['/static/js/blogEditor.js'], // Update with the correct path to the JS file containing the BlogEditor component
+    // Update with correct paths after building your frontend assets
+    styles: ['/static/css/blogEditor.css'], 
+    scripts: ['/static/js/blogEditor.js'], 
   },
 });
 
