@@ -46,7 +46,7 @@ const Testimonials = () => (
     </blockquote>
     <blockquote className="testimonial">
       "Working with Joseph was a pleasure. His technical skills and creativity are top-notch."
-      <footer>- Team Collaborator</footer>
+      <footer>- Elton Wahinya</footer>
     </blockquote>
   </div>
 );
