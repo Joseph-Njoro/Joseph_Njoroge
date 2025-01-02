@@ -55,7 +55,7 @@ const LandingPage = () => {
             technologies, and I always strive to enhance my skills and stay ahead in the tech world.
           </p>
           <div className="hero-buttons">
-            <a href="/api/resume" className="btn btn-primary" download>
+            <a href="/joseph_njoroge_resume.pdf" className="btn btn-primary" download>
               Download Resume
             </a>
             <a
