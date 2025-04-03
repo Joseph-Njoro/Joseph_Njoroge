@@ -117,7 +117,7 @@ const AboutMe = () => {
       <section className="achievements">
         <h2>Achievements</h2>
         <ul className="achievements-list">
-          <li>Winner of the 2023 Hackathon at ALX Holberton</li>
+          <li>Participated at a Hackahon at ALX HUb-Nnation Centre during a CODE-KESHA</li>
           <li>Contributed to the development of an open-source library for efficient data handling</li>
           <li>Speaker at local tech meetups on topics of full-stack development and cloud infrastructure</li>
         </ul>
@@ -142,7 +142,7 @@ const AboutMe = () => {
 
       {/* Placeholder for Contact Form */}
       <section className="contact-form">
-        <h2>Contact Form (Coming Soon)</h2>
+        <h2>Contact Form</h2>
         <p>Stay tuned for a dedicated contact form for quick and easy communication.</p>
       </section>
     </div>
