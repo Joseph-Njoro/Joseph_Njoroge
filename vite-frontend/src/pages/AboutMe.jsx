@@ -136,7 +136,7 @@ const AboutMe = () => {
         <a href="mailto:ramosnjoro@gmail.com" className="contact-link">ramosnjoro@gmail.com</a>
         <ul className="social-links">
           <li><a href="https://github.com/Joseph-Njoro/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/joseph-njoroge-/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://www.linkedin.com/in/JustJoseph7/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
         </ul>
       </section>
 
